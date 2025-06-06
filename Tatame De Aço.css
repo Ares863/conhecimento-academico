@@ -1,0 +1,195 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #222, #444);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 20px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+.nav {
+  position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 10px 20px;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  background-color: #444;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.nav a:hover {
+  background-color: #666;
+  text-decoration: underline;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 250px;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+ul {
+    padding-left: 20px;
+  }
+
+/* Define o estilo do menu (lista não ordenada) */
+.header {
+  padding: 0; /* Remove espaçamento interno */
+  margin: 0; /* Remove espaçamento externo */
+  display: flex; /* Exibe os itens lado a lado */
+  justify-content: center; /* Centraliza os itens do menu */
+  list-style: none; /* Remove os marcadores padrão da lista */
+}
+
+/* Estilo de cada item de menu */
+.header li {
+  padding: 15px 25px; /* Espaçamento interno (topo/baixo e laterais) */
+  color: rgb(255, 255, 255); /* Cor do texto */
+  cursor: pointer; /* Mostra o ponteiro ao passar o mouse */
+  position: relative; /* Permite posicionar o ::after relativo ao item */
+  transition: background-color 0.3s, transform 0.2s; /* Transições suaves nos efeitos */
+}
+
+/* Efeito ao passar o mouse sobre um item */
+.header li:hover {
+  background-color: #3f3f3f; /* Cor de fundo ao passar o mouse */
+  color: #ffffff; /* Muda a cor do texto ao passar o mouse */
+  transform: scale(1.05); /* Aumenta levemente o tamanho do item */
+}
+
+/* Cria uma linha animada abaixo do item de menu */
+.header li::after {
+  content: ''; /* Elemento visual vazio */
+  position: absolute; /* Posiciona absolutamente dentro do item */
+  width: 0%; /* Inicialmente a linha tem 0% de largura */
+  height: 2px; /* Altura da linha */
+  left: 0; /* Alinhado à esquerda do item */
+  bottom: 5px; /* Fica um pouco acima da base do item */
+  background-color: white; /* Cor da linha */
+  transition: width 0.3s ease-in-out; /* Animação de expansão da linha */
+}
+
+/* Quando o mouse passa por cima, a linha se expande */
+.header li:hover::after {
+  width: 100%; /* A linha cresce até ocupar toda a largura */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 9999;
+  border-bottom: 2px solid white;
+}
+
+.navbar a {
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: 0.3s;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 5px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  background-color: #444;
+  color: white;
+  transform: scale(1.1);
+}
+
+.navbar a.active {
+  background-color: white;
+  color: #222;
+  transform: scale(1.1);
+  border-bottom: 3px solid white;
+}
