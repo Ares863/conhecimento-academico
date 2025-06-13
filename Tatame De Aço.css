@@ -1,0 +1,196 @@
+/* Aplica a todos os elementos da página */
+* {
+  box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho total do elemento */
+  margin: 0; /* Remove margens externas padrão dos navegadores */
+  padding: 0; /* Remove espaçamentos internos padrão */
+  scroll-margin-top: 4em; /* Adiciona margem no scroll automático (útil para âncoras com cabeçalho fixo) */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte padrão do site */
+  line-height: 1.6; /* Define o espaçamento entre linhas */
+  background-color: #f0f2f5; /* Cor de fundo suave para o corpo da página */
+  color: #333; /* Cor do texto principal (cinza escuro) */
+}
+
+header {
+  background: linear-gradient(135deg, #222, #444); /* Fundo com degradê na diagonal escuro */
+  color: white; /* Cor do texto branco */
+  padding: 40px 20px; /* Espaçamento interno grande */
+  text-align: center; /* Centraliza o texto */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra na parte inferior do cabeçalho */
+}
+
+h1 {
+  margin-bottom: 10px; /* Espaço inferior do título */
+  font-size: 2.5em; /* Tamanho grande para o título */
+}
+
+section {
+  padding: 40px 20px; /* Espaçamento interno */
+  max-width: 1000px; /* Largura máxima da seção */
+  margin: auto; /* Centraliza horizontalmente */
+}
+
+section img {
+  display: block; /* Faz a imagem se comportar como bloco */
+  max-width: 100%; /* Limita a largura da imagem ao tamanho do container */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 12px; /* Arredonda os cantos da imagem */
+  margin: 20px auto; /* Espaçamento vertical e centralização horizontal */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra leve ao redor da imagem */
+}
+
+footer {
+  background-color: #222; /* Fundo escuro */
+  color: #fff; /* Texto branco */
+  text-align: center; /* Centraliza o texto */
+  padding: 20px; /* Espaçamento interno */
+  font-size: 0.9em; /* Tamanho levemente menor */
+}
+
+.nav {
+  position: fixed; /* Fixa o menu no topo da tela */
+  top: 0;
+  width: 100%; /* Ocupa toda a largura */
+  background-color: #111; /* Cor de fundo do menu */
+  padding: 10px 20px; /* Espaçamento interno */
+  z-index: 999; /* Garante que fique acima de outros elementos */
+  display: flex; /* Exibe os itens lado a lado */
+  justify-content: space-between; /* Espaça os itens ao máximo */
+  gap: 30px; /* Espaçamento entre os itens */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra leve embaixo do menu */
+}
+
+.nav a {
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  background-color: #444; /* Fundo cinza escuro nos links */
+  padding: 6px 12px; /* Espaçamento interno */
+  border-radius: 6px; /* Bordas arredondadas */
+  transition: background-color 0.3s; /* Suaviza a mudança de cor ao passar o mouse */
+}
+
+.nav a:hover {
+  background-color: #666; /* Cor de fundo mais clara ao passar o mouse */
+  text-decoration: underline; /* Sublinha o texto ao passar o mouse */
+}
+
+.menu {
+  display: flex; /* Exibe os cards lado a lado */
+  flex-wrap: wrap; /* Permite quebrar linha se não couber */
+  justify-content: space-around; /* Distribui os itens com espaço ao redor */
+  gap: 20px; /* Espaço entre os cards */
+}
+
+.card {
+  flex: 1 1 250px; /* Tamanho mínimo de 250px, flexível */
+  background-color: white; /* Fundo branco */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o conteúdo */
+  text-decoration: none; /* Remove sublinhado se for um link */
+  color: #222; /* Cor do texto escura */
+  border-radius: 10px; /* Cantos arredondados */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra leve */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação ao passar o mouse */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Move o card para cima */
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15); /* Aumenta a sombra ao passar o mouse */
+}
+
+ul {
+  padding-left: 20px; /* Espaçamento à esquerda das listas */
+}
+
+/* Define o estilo do menu (lista não ordenada) */
+.header {
+  padding: 0; /* Remove espaçamento interno */
+  margin: 0; /* Remove espaçamento externo */
+  display: flex; /* Exibe os itens lado a lado */
+  justify-content: center; /* Centraliza os itens do menu */
+  list-style: none; /* Remove os marcadores padrão da lista */
+}
+
+/* Estilo de cada item de menu */
+.header li {
+  padding: 15px 25px; /* Espaçamento interno (topo/baixo e laterais) */
+  color: rgb(255, 255, 255); /* Cor do texto */
+  cursor: pointer; /* Mostra o ponteiro ao passar o mouse */
+  position: relative; /* Permite posicionar o ::after relativo ao item */
+  transition: background-color 0.3s, transform 0.2s; /* Transições suaves nos efeitos */
+}
+
+/* Efeito ao passar o mouse sobre um item */
+.header li:hover {
+  background-color: #3f3f3f; /* Cor de fundo ao passar o mouse */
+  color: #ffffff; /* Muda a cor do texto ao passar o mouse */
+  transform: scale(1.05); /* Aumenta levemente o tamanho do item */
+}
+
+/* Cria uma linha animada abaixo do item de menu */
+.header li::after {
+  content: ''; /* Elemento visual vazio */
+  position: absolute; /* Posiciona absolutamente dentro do item */
+  width: 0%; /* Inicialmente a linha tem 0% de largura */
+  height: 2px; /* Altura da linha */
+  left: 0; /* Alinhado à esquerda do item */
+  bottom: 5px; /* Fica um pouco acima da base do item */
+  background-color: white; /* Cor da linha */
+  transition: width 0.3s ease-in-out; /* Animação de expansão da linha */
+}
+
+/* Quando o mouse passa por cima, a linha se expande */
+.header li:hover::after {
+  width: 100%; /* A linha cresce até ocupar toda a largura */
+}
+
+.navbar {
+  position: fixed; /* Fixa no topo */
+  top: 0;
+  width: 100%;
+  background-color: #222; /* Fundo escuro */
+  display: flex; /* Itens lado a lado */
+  justify-content: center; /* Centraliza */
+  flex-wrap: wrap; /* Quebra em telas menores */
+  z-index: 9999; /* Fica acima de tudo */
+  border-bottom: 2px solid white; /* Linha branca inferior */
+}
+
+.navbar a {
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative; /* Necessário para o ::after animado */
+  transition: 0.3s; /* Suaviza as mudanças */
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 5px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+  width: 100%; /* Linha branca cresce ao passar o mouse */
+}
+
+.navbar a:hover {
+  background-color: #444; /* Fundo muda */
+  color: white; /* Cor mantém branca */
+  transform: scale(1.1); /* Aumenta levemente o item */
+}
+
+.navbar a.active {
+  background-color: white; /* Fundo branco */
+  color: #222; /* Texto escuro */
+  transform: scale(1.1); /* Aumenta */
+  border-bottom: 3px solid white; /* Linha branca extra para marcar a página atual */
+}
